@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   static const String apiKey =
-      'NuqfPXmJ1LxqQTmWx35yQ8GSKSfl4KJaIKqc3HwQVy241PUKzGvw03WQ';
+      'API_KEY_HERE';
   static const String baseUrl = 'https://api.pexels.com/v1';
 
   static Future<List<Photo>> fetchPhotos(
@@ -22,7 +22,7 @@ class ApiService {
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       print(data); // Debugging: Print API response
-      
+
       final photos = (data['photos'] as List)
           .map((photo) => Photo.fromJson(photo))
           .toList();
